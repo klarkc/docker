@@ -19,5 +19,7 @@ COPY hostapd.conf /etc/hostapd/hostapd.conf
 COPY replace_wifi_pw.sh /opt/replace_wifi_pw.sh
 COPY start_services.sh /opt/start_services.sh
 
+ENV CUSTOM_PW=
+ENV CUSTOM_SSID=
 CMD /opt/start_services.sh
 
