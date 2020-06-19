@@ -16,10 +16,12 @@ COPY dnsmasq.conf /etc/dnsmasq.conf
 COPY interfaces /etc/network/interfaces
 COPY iptables.ipv4.nat /etc/iptables.ipv4.nat
 COPY hostapd.conf /etc/hostapd/hostapd.conf
-COPY replace_wifi_pw.sh /opt/replace_wifi_pw.sh
+COPY replace_tokens.sh /opt/replace_tokens.sh
 COPY start_services.sh /opt/start_services.sh
 
 ENV CUSTOM_PW=
 ENV CUSTOM_SSID=
+ENV LAN="eth0"
+ENV WLAN="wlan0"
 CMD /opt/start_services.sh
 

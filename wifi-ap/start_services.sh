@@ -3,9 +3,10 @@
 sysctl -w net.ipv4.ip_forward=1
 rfkill block wifi
 rfkill unblock wifi
-ifup wlan0
+/opt/replace_tokens.sh
+ifup $WLAN
+cat /etc/iptables.ipv4.nat
 iptables-restore < /etc/iptables.ipv4.nat
-/opt/replace_wifi_pw.sh
 /etc/init.d/dnsmasq start
 echo
 echo Here are your Docker WiFi credentials:
